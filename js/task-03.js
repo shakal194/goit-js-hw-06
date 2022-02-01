@@ -13,12 +13,19 @@ const images = [
   },
 ];
 
-const markup = technologies
-  .map((technology) => `<li class="list-item">${technology}</li>`)
+const imagesRef = document.querySelector(".gallery");
+
+const galleryRef = images
+  .map((image) => `<li class="list-item"><img ${Object.values(image)} ></li>`)
   .join("");
+// galleryRef.getAttribute("src");
+// galleryRef.getAttribute("alt");
 
 // Check the console, you'll see a single string with HTML tags
-console.log(markup);
+// console.log(galleryRef);
+
+const item = document.createElement("li");
+item.classList.add("item");
 
 // Adding all the markup in one operation
-list.innerHTML = markup;
+imagesRef.innerHTML = galleryRef;
