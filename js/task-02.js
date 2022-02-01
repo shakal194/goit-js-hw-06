@@ -16,7 +16,8 @@ console.log(listMark);
 //test//
 
 let fragment = new DocumentFragment();
-listMark.forEach((elem) => {
+//listMark.forEach((elem) =>
+listMark.forEach(function (elem) {
     // добавим в фрагмент элемент $li
     fragment.appendChild(elem);
   });
