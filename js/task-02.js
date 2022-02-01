@@ -12,9 +12,21 @@ const listMark = ingredients
   .map((ingredient) => `<li class="item">${ingredient}</li>`)
   .join("");
 console.log(listMark);
-const addList = document.createElement("li");
 
-list.appendChild(addList);
+//test//
+
+let fragment = new DocumentFragment();
+listMark.forEach((elem) => {
+    // добавим в фрагмент элемент $li
+    fragment.appendChild(elem);
+  });
+  // вставим фрагмент в #target-list
+  document.querySelector('#ingredients').appendChild(fragment);
+//test//
+
+
+//const addList = document.createElement("li");
+//list.appendChild(addList);
 
 // const firstItem = document.createElement("li");
 // firstItem.textContent = "Potatoes";
