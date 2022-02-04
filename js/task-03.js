@@ -13,19 +13,12 @@ const images = [
   },
 ];
 
-const imagesRef = document.querySelector(".gallery");
-
-const galleryRef = images
-  .map((image) => `<li class="list-item"><img ${Object.values(image)} ></li>`)
-  .join("");
-// galleryRef.getAttribute("src");
-// galleryRef.getAttribute("alt");
-
-// Check the console, you'll see a single string with HTML tags
-// console.log(galleryRef);
-
-const item = document.createElement("li");
-item.classList.add("item");
-
-// Adding all the markup in one operation
-imagesRef.innerHTML = galleryRef;
+const galleryList = document.querySelector(".gallery");
+images.forEach(({ url, alt }) => {
+  return galleryList.insertAdjacentHTML(
+    "beforeend",
+    `<li class='gallery-item'>
+    <img class='gallery-image' src='${url}' alt='${alt}'>
+</li>`
+  );
+});
