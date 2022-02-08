@@ -1,17 +1,30 @@
 const ingredients = ["Potatoes", "Mushrooms", "Garlic", "Tomatos", "Herbs", "Condiments"];
-
 const listRef = document.querySelector("#ingredients");
 
-ingredients.forEach(function (ingredient) {
-  const itemRef = document.createElement("li");
-  itemRef.classList.add = "item";
-  itemRef.textContent = ingredient;
-  listRef.append(itemRef);
-  console.log(itemRef);
-});
+// START EXAMPLE 1 //
 
-// const listMark = ingredients
-//   .map((ingredient) => `<li class="item">${ingredient}</li>`)
-//   .join("");
+const ingredientsItems = (ingredient) =>
+  ingredient.map((ingredient) => {
+    const itemEl = document.createElement("li");
+    itemEl.classList.add("item");
+    itemEl.textContent = ingredient;
+    console.log(itemEl);
+    return itemEl;
+  });
+listRef.append(...ingredientsItems(ingredients));
+// END EXAMPLE 1 //
 
-// listRef.innerHTML = listMark;
+//START EXAMPLE 2//
+
+// const fragment = document.createDocumentFragment();
+
+// ingredients.forEach(function (ingredient) {
+//   const itemEl = document.createElement("li");
+//   itemEl.classList.add("item");
+//   itemEl.textContent = ingredient;
+//   fragment.appendChild(itemEl);
+// });
+
+// listRef.append(fragment);
+// console.log(listRef);
+// //END EXAMPLE 2//
